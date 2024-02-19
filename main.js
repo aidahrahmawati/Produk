@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { 
+import {
   getFirestore,
   collection,
   addDoc,
@@ -21,24 +21,23 @@ const firebaseConfig = {
   appId: "1:630693962922:web:a9447f760b858bcf781cd3"
 };
 
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function ambilDaftarProduk() {
   const refDokumen = collection(db, "produk");
-  const kuery = query(refDokumen, orderBy("nama"));
-  const cuplikanKuery = await getDocs(kuery);
-  
+  const kueri = query(refDokumen, orderBy("nama"));
+  const cuplikanKueri = await getDocs(kueri);
+
   let hasil = [];
-  cuplikanKuery.forEach((dok) => {
-    hasil.push({ 
-      id: dok.id, 
+  cuplikanKueri.forEach((dok) => {
+    hasil.push({
+      id: dok.id,
       nama: dok.data().nama,
       harga: dok.data().harga,
       stok: dok.data().stok,
     });
   });
-  
+
   return hasil;
 }
