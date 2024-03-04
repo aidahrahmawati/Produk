@@ -1,0 +1,53 @@
+<DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Tamabah Data Pembeli</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<h1> from data pembeli</h1>
+
+<body class="m-3">
+
+  <form class="mb-3">
+    <div class="mb-3">
+      <label class="form-label">nama Pembeli</label>
+      <input type="text" class="form-control" id="input-nama">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Alamat</label>
+      <input type="text" class="form-control" id="input-alamat">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">no.tlpn</label>
+      <input type="text" class="form-control" id="input-notlpn">
+    </div>
+    <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
+  </form>
+
+  <a href="index.html">lihat daftar pembeli</a>
+
+  <script type="module">
+    import { tambahpembeli } from './main.js';
+
+    let tombolTamabah = document.getElementById('tombol-tambah');
+    let elemenNamapembli = document.getElementById('input-nama');
+    let elemenalamat = document.getElementById('input-alamat');
+    let elemenno.tlpn = document.getElementById('input-no.tlpn');
+    
+    tombolTamabah.addEventListener('click', async function (e){
+      e.preventDefault();
+      await tambahpembeli(elemennamapembeli.value, elemenalamat.value, elemennotlpn.value);
+      window.location,href = 'index.html';
+    });
+  </script>
+
+</body>
+
+</html>
